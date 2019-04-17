@@ -1,53 +1,21 @@
-// let level1, level2, level3
-//
-//
-// let chooseLevel = {
-//   words1: ['PIRATE', 'BATEAU', 'CANON', 'CALE', 'CAPE', 'MARIN', 'PERROQUET', 'PONT', 'POUPE', 'NAVIRE', 'CAPITAINE', 'TRÉSOR', 'RAME', 'BOTTES', 'CRANE', 'RAT', 'ILE','PORT','SABRE', 'JACK', 'PLUME'],
-//   words2: ['GOUVERNAIL', 'ESCALE', 'PAVILLON', 'CORSAIRE', 'TRIBORD','AMARRER', 'NOEUD', 'VAISSEAU', 'CANONNER', 'BOUCANIER', 'CONTREBANDE', 'TRICORNE', 'RHUM', 'TONNEAU', 'TEMPETE', 'MONSTRE', 'VOLEUR'],
-//   words3: ['MOUSAILLON', 'FLIBUSTIER', 'MARCHEPIED', 'SABORDER', 'ABORDAGE', 'BABORD', 'FREGATE', 'GALION', 'CHALOUPE', 'PALMIER', 'MARCHANDISE', 'PLANCHE', 'CABINE', 'CAPITAINE', 'CARAIBES', 'BERMUDE', 'PISTOLET','MEDAILLON','CANNIBALE'],
-//   level1: level1,
-//   level2: level2,
-//   level3: level3,
-//   levelChoice = function(){
-//     this.level1=document.getElementbyId('level1')
-//     this.level2=document.getElementbyId('level2')
-//     this.level3=document.getElementbyId('level3')
-//     this.level1.addEventListener(
-//       'click',
-//       function(){
-//         promptWord.words=this.level1
-//       })
-//     this.level2.addEventListener(
-//       'click',
-//       function(){
-//         promptWord.words=this.level2
-//       })
-//     this.level3.addEventListener(
-//       'click',
-//       function(){
-//         promptWord.words=this.level3
-//         })
-//   }
-// }
-//
-// let replayButton
-//
+
+let pos, secretWord='test', txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn, nbSameLetter, backgroundImage, winCheck, words, tempLevel
 
 let game ={
   score: 0,
   replayButton: document.getElementById('replay'),
   levels: document.querySelectorAll(".level"),
   end: false,
-    // game.replayButton.addEventListener(
-    //   'click',
-    //   location.reload (),
-    //    false
-    // )
+  replay: function(){
+    replayButton.addEventListener(
+  'click',
+  function (e){
+    e.preventDefault() //ÇA MARCHE PAS !!!
+    init()
+  }
+)
+  }
    }
-
-
-let pos, secretWord='test', txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn, nbSameLetter, backgroundImage, winCheck, words, tempLevel
-
 
 let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   level1: document.querySelector('#level1'),
@@ -56,8 +24,9 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   tempLevel: tempLevel, //variable qui enregistre le choix du tableau
   words:[
     ['PIRATE', 'BATEAU', 'CANON', 'CALE', 'CAPE', 'MARIN', 'PERROQUET', 'PONT', 'POUPE', 'NAVIRE', 'CAPITAINE', 'TRÉSOR', 'RAME', 'BOTTES', 'CRANE', 'RAT', 'ILE','PORT','SABRE', 'JACK', 'PLUME'],
-  ['GOUVERNAIL', 'ESCALE', 'PAVILLON', 'CORSAIRE', 'TRIBORD','AMARRER', 'NOEUD', 'VAISSEAU', 'CANONNER', 'BOUCANIER', 'CONTREBANDE', 'TRICORNE', 'RHUM', 'TONNEAU', 'TEMPETE', 'MONSTRE', 'VOLEUR', 'PIEUVRE'],
-  ['MOUSAILLON', 'FLIBUSTIER', 'MARCHEPIED', 'SABORDER', 'ABORDAGE', 'BABORD', 'FREGATE', 'GALION', 'CHALOUPE', 'PALMIER', 'MARCHANDISE', 'PLANCHE', 'CABINE', 'CAPITAINE', 'CARAIBES', 'BERMUDE', 'PISTOLET','MEDAILLON','CANNIBALE']],//tableau qui contient les different niveaux de difficulte
+    ['GOUVERNAIL', 'ESCALE', 'PAVILLON', 'CORSAIRE', 'TRIBORD','AMARRER', 'NOEUD', 'VAISSEAU', 'CANONNER', 'BOUCANIER', 'CONTREBANDE', 'TRICORNE', 'RHUM', 'TONNEAU', 'TEMPETE', 'MONSTRE', 'VOLEUR', 'PIEUVRE'],
+    ['MOUSAILLON', 'FLIBUSTIER', 'MARCHEPIED', 'SABORDER', 'ABORDAGE', 'BABORD', 'FREGATE', 'GALION', 'CHALOUPE', 'PALMIER', 'MARCHANDISE', 'PLANCHE', 'CABINE', 'CAPITAINE', 'CARAIBES', 'BERMUDE', 'PISTOLET','MEDAILLON','CANNIBALE']
+  ],//tableau qui contient les different niveaux de difficulte
   pos : pos, //position du mot à trouver dans le tableau
   secretWord : secretWord, //mot à trouver
   looseLetter : 0, //mauvaise lettre //
@@ -92,6 +61,7 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   randomSecretWord: function(){ //génére un mot aleatoire selon les 3 niveaux de difficulté
     this.pos=Math.floor(Math.random()*this.words.length) //choix aléatoire dans words selon la position des elmts
     this.secretWord=this.words[this.tempLevel][this.pos]//le secret word est defini selon le niveau et un nombre aleatoire
+    // ERREURE À CORRIGER !!!
   },
   createBox: function(divLetter){// créé les emplacements par lettre
     this.wordSpace=document.querySelector('.wordSpace')
@@ -128,37 +98,33 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
             console.log(this.looseLetter);
             this.backgroundImage=document.querySelector('gameSpace')
             if(this.looseLetter==1){
-              this.backgroundImage.style.background="url(../images/fondAccueil1)"
+              this.backgroundImage.style.background="url(../images/fondAccueil2.jpg)"
             }
             else if(this.looseLetter==2){
-              this.backgroundImage.style.background="url(../images/fondAccueil2)"
+              this.backgroundImage.style.background="url(../images/fondAccueil3.jpg)"
             }
             else if(this.looseLetter==3){
-              this.backgroundImage.style.background="url(../images/fondAccueil3)"
+              this.backgroundImage.style.background="url(../images/fondAccueil4.jpg)"
             }
             else if(this.looseLetter==4){
-              this.backgroundImage.style.background="url(../images/fondAccueil4)"
+              this.backgroundImage.style.background="url(../images/fondAccueil5.jpg)"
             }
             else if(this.looseLetter==5){
-              this.backgroundImage.style.background="url(../images/fondAccueil5)"
+              this.backgroundImage.style.background="url(../images/fondAccueil6.jpg5)"
             }
             else if(this.looseLetter==6){
-              this.backgroundImage.style.background="url(../images/fondAccueil6)"
+              this.backgroundImage.style.background="url(../images/fondAccueil7.jpg)"
             }
             else if(this.looseLetter==7){
-              this.backgroundImage.style.background="url(../images/fondAccueil7)"
+              this.backgroundImage.style.background="url(../images/fondAccueil8.jpg)"
             }
             else if(this.looseLetter==8){
-              this.backgroundImage.style.background="url(../images/fondAccueil8)"
-            }
-            else if(this.looseLetter==9){
-              this.backgroundImage.style.background="url(../images/fondAccueil9)"
+              this.backgroundImage.style.background="url(../images/fondAccueil9.jpg)"
             }
             else{
-              this.backgroundImage.style.background="url(../images/fondAccueil10)"
+              this.backgroundImage.style.background="url(../images/fondAccueil10.jpg)"
             }
           }
-
       })
     }
   }

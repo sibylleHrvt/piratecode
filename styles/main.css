@@ -130,13 +130,12 @@ li.alpahaLetter:hover{
   background-color: #6c472c;
 }
 
-
 .gameSpace{
   width: 960px;
   height: 550px;
   background-image: url("../images/fondAccueil.jpg");
   background-size: 104%;
-  margin: 40px auto;
+  margin: 10px auto 40px auto;
 }
 
 .wordSpace{
@@ -201,15 +200,17 @@ footer{
   font-size: 20px;
 }
 
-.levelBloc{
+.levelBLoc{
+  width: 960px;
   display: flex;
-  width: 10px;
-  /* align-items: center; */
-  justify-content: center;
+  justify-content: space-around;
+  background-image: url("../images/pancartes-bois.jpg");
+  border-radius: 10px;
+  margin: 10px 0px 0px 0px;
 }
 
 #level1, #level2, #level3{
-  width: 60px;
+  width: 75px;
   margin: 0 50px;
 }
 
@@ -224,6 +225,7 @@ footer{
   background: black;
   text-align: center;
   margin: 10px 0px;
+  padding: 5px;
 }
 
 .levelImage{
