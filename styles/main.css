@@ -80,7 +80,7 @@ li{
 .text{
   display: flex;
   flex-wrap: wrap;
-  background-image: url("../images/pancartebois.jpg")
+  background-image: url("../images/pancartes-bois.jpg")
 }
 
 h2{
@@ -173,4 +173,20 @@ li.txtLetter.display{
   left:20px;
   font-size:18px;
   color: #000;
+}
+footer{
+  background-color: #000;
+  height: 130px;
+  margin: 0 auto;
+}
+
+.txtBloc{
+  padding : 40px 5px;
+  font-size: 13px;
+  color: #DDD;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
 }
