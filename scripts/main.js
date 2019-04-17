@@ -1,4 +1,3 @@
-
 let pos, secretWord='test', txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn, nbSameLetter, backgroundImage, winCheck, words, tempLevel
 
 let game ={
