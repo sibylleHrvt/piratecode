@@ -15,8 +15,7 @@ main{
 main.accueil{
   background-image: url("../images/fondAccueil.png");
   background-size: 115%;
-  position: relative;
-  height: 100vh;
+  height: 650px;
   z-index: -15000;
 }
 
@@ -60,19 +59,25 @@ li{
   background: black;
 }
 
-
 .playButton{
   color: #fff;
   font-size: 30px;
   padding: 0px 0px 100px 0px;
   margin: 0 auto;
-  z-index: 0;
 }
 
 .play{
   background: #000;
   text-align: center;
-  padding: 10px;
+  width: 250px;
+  padding: 10px 60px;
+  border-radius: 40px;
+}
+
+.play:hover{
+  width: 175px;
+  height: 40px;
+  font-size: 35px;
 }
 
 #rules, #story{
@@ -98,15 +103,23 @@ p.story, p.rules{
   color: #FFF;
 }
 
-
 div.pirateLogo{
-  height : 100vh;
+  height : 100%;
+  position:relative;
+}
+
+.pirateLogoBloc{
+  width: 960px;
+  margin: 0 auto;
 }
 
 img.pirateLogo{
+  position: absolute;
   z-index: 10;
   width: 400px;
-  padding: 10px 0px;
+  margin-top: 50px;
+  margin-left: 280px;
+  display: left;
 }
 
 .game{
@@ -244,7 +257,8 @@ footer{
 img.bateauNav{
   position: absolute;
   left : 0px ;
-  z-index: -1;
+  z-index: 1;
   width: 250px;
   height:250px;
+  padding-top: 220px;
 }
