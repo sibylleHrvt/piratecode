@@ -33,6 +33,10 @@ nav{
   display: flex;
 }
 
+.music{
+  display:
+}
+
 .menu{
   background:#000;
   padding: 10px;
@@ -213,7 +217,7 @@ footer{
   justify-content: space-between;
 }
 
-#replay{
+.replay{
   background-color: #000;
   color: #fff;
   border-radius: 40px;
@@ -231,28 +235,25 @@ footer{
   margin: 10px 0px 0px 0px;
 }
 
-#level1, #level2, #level3{
-  width: 75px;
-  margin: 0 50px;
+.level{
+  width: 150px;
+  margin: 0 auto;
 }
 
-#levelImage1, #levelImage2, #levelImage3{
-  width: 110%;
+.levelImage{
+  width: 75%;
+  margin: 20px 0px;
 }
 
-#txtLevel1, #txtLevel2, #txtLevel3{
+.txtLevel{
   color: white;
   width: 60px;
   font-size: 12px;
   background: black;
   text-align: center;
-  margin: 10px 0px;
+  margin: 10px 0px 0px 8px;
   padding: 5px;
-}
 
-.levelImage{
-  width: 150%;
-  margin: 10px 0px;
 }
 
 img.bateauNav{
@@ -261,5 +262,5 @@ img.bateauNav{
   z-index: 1;
   width: 250px;
   height:250px;
-  padding-top: 350px;
+  padding-top: 375px;
 }
