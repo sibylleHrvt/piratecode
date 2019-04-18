@@ -5,119 +5,124 @@ let game ={
   replayButton: document.querySelector('button'),
   }
 
-let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
+let promptWord = { //define secretword
   level1: document.querySelector('.level1'),
   level2: document.querySelector('.level2'),
   level3: document.querySelector('.level3'),
-  tempLevel: 0, //variable qui enregistre le choix du tableau
+  tempLevel: tempLevel, //save choice of array
+  choosenLevel:[],
   words:[
     ['PIRATE', 'BATEAU', 'CANON', 'CALE', 'CAPE', 'MARIN', 'PERROQUET', 'PONT', 'POUPE', 'NAVIRE', 'CAPITAINE', 'TRÉSOR', 'RAME', 'BOTTES', 'CRANE', 'RAT', 'ILE','PORT','SABRE', 'JACK', 'PLUME'],
     ['GOUVERNAIL', 'ESCALE', 'PAVILLON', 'CORSAIRE', 'TRIBORD','AMARRER', 'NOEUD', 'VAISSEAU', 'CANONNER', 'BOUCANIER', 'CONTREBANDE', 'TRICORNE', 'RHUM', 'TONNEAU', 'TEMPETE', 'MONSTRE', 'VOLEUR', 'PIEUVRE'],
     ['MOUSAILLON', 'FLIBUSTIER', 'MARCHEPIED', 'SABORDER', 'ABORDAGE', 'BABORD', 'FREGATE', 'GALION', 'CHALOUPE', 'PALMIER', 'MARCHANDISE', 'PLANCHE', 'CABINE', 'CAPITAINE', 'CARAIBES', 'BERMUDE', 'PISTOLET','MEDAILLON','CANNIBALE']
-  ],//tableau qui contient les different niveaux de difficulte
-  pos : pos, //position du mot à trouver dans le tableau
-  secretWord : secretWord, //mot à trouver
-  looseLetter : 0, //mauvaise lettre //
+  ],//contains difficulty levels
+  pos : pos, //position of secret world in words
+  secretWord : secretWord,
+  looseLetter : 0,
   boxGame:[],
-  txtLetter: txtLetter,// les li qui contiennent les lettres de l'alphabet
-  divLetter: divLetter, //ul qui contient les li qui contiennent les lettre de l'alphabet
+  txtLetter: txtLetter,//li which contains alhabet letters
+  divLetter: divLetter, //ul which contains li which contains letter
   wordSpace: wordSpace,
-  alphabet: [], //tableau qui contient les lettres de l'alphabet
-  alphaPos: alphaPos,//position de la letter dans l'alphabet
+  alphabet: [], //alphabet array
+  alphaPos: alphaPos,//letter position in alphabet
   tempLetter: tempLetter,
-  isIn: isIn, //variable qui enregistre si a lettre sur laquelle on a cliqué est dans le mot secret
-  nbSameLetter: nbSameLetter,// nb de lettres identiques ds un même mot
-  backgroundImage: backgroundImage, //image de fond qui change selon les erreures
-  chooseLevel: function(){ //choisir la difficulté
-    this.level1.addEventListener( // Selon le choix du niveau, permettra d'attribuer un des tableaux de words (selon la position)
+  isIn: isIn, //save if clicked letter is in sacretWord
+  nbSameLetter: nbSameLetter,// nb of same letter in secretWord
+  backgroundImage: backgroundImage, //background-image which change if wrong letter
+  chooseLevel: function(){ //--> choose difficulty
+    promptWord.level1.addEventListener( // Given level's choice, give one of words array
       'click',
       function(){
-        this.tempLevel=0
+        promptWord.tempLevel=0
+        console.log(promptWord.tempLevel)
       })
-    this.level2.addEventListener(
+    promptWord.level2.addEventListener(
       'click',
       function(){
-        this.tempLevel=1
+        promptWord.tempLevel=1
+        console.log(promptWord.tempLevel)
       })
-    this.level3.addEventListener(
+    promptWord.level3.addEventListener(
       'click',
       function(){
-        this.tempLevel=2
+        promptWord.tempLevel=2
+        console.log(promptWord.tempLevel)
       })
   },
-  randomSecretWord: function(){ //génére un mot aleatoire selon les 3 niveaux de difficulté
-    this.pos=Math.floor(Math.random()*this.words[this.tempLevel].length) //choix aléatoire dans words selon la position des elmts
-    this.secretWord=this.words[this.tempLevel][this.pos]//le secret word est defini selon le niveau et un nombre aleatoire
+  randomSecretWord: function(){ //give a random secret word from one of the three arrays
+    promptWord.pos=Math.floor(Math.random()*promptWord.words[promptWord.tempLevel].length)
+    console.log(this.pos) //random choice in words
+    promptWord.secretWord=promptWord.words[promptWord.tempLevel][promptWord.pos]
+    console.log(promptWord.secretWord)//secret word define with level(tempLevel) and random number(pos)
     // ERREUR À CORRIGER !!!
   },
-  createBox: function(divLetter){// créé les emplacements par lettre
+  createBox: function(divLetter){// create a box for each letter
     this.wordSpace=document.querySelector('.wordSpace')
-    this.divLetter=document.createElement('ul') //on créé un ul .divLetter dans la div .wordSpace
+    this.divLetter=document.createElement('ul') //create ul .divLetter in div .wordSpace
     this.divLetter.className='divLetter'
     this.wordSpace.appendChild(this.divLetter)
     for (let i=0; i < this.secretWord.length; i++){
-      this.boxGame.push(this.secretWord[i])//chacune des lettres du secretWord est poussée dans boxGame
-      this.txtLetter=document.createElement('li') //on créé un li .txtLetter dans la ul .divLetter
+      this.boxGame.push(this.secretWord[i])//Push each letter of secretWord in boxGame
+      this.txtLetter=document.createElement('li') //Create li .txtLetter in ul .divLetter
       this.divLetter.appendChild(this.txtLetter)
       this.txtLetter.className= 'txtLetter'
-      this.txtLetter.setAttribute('data-letter',this.boxGame[i] )//on donne un attribut au li créé selon sa position dans BoxGame (dans le mot)
+      this.txtLetter.setAttribute('data-letter',this.boxGame[i] )//give attribute to li given its position in BoxGame
       this.txtLetter.innerHTML=this.boxGame[i]
     }
   },
-  runAlphabet: function(){//parcours l'alphabet pour vérifier si la lettre cliquée est présente dans le mot secret
-    for (let i=0; i < this.alphabet.length; i++){ //on parcourt alphabet
+  runAlphabet: function(){//run the alphabet to check if ckicked letter is in secret word
+    for (let i=0; i < this.alphabet.length; i++){ //run alphabet
       console.log(this.alphabet[i].innerHTML)
       this.alphaPos = this.alphabet[i]
       console.log(this.alphaPos)
-      this.alphaPos.addEventListener( //pour chacune des lettres de l'alphabet (alphaPos)
-        "click", // si on clique sur la case
+      this.alphaPos.addEventListener( //for each letter of alphabet (alphaPos)
+        "click", // if click on the case
         function(){
-          this.tempLetter = this.alphabet[i].innerHTML
-          this.isIn=this.secretWord.lastIndexOf(this.tempLetter)//si la lettre sur laquelle on a cliqué (lastIndexOf) est dans le mot (secretWord)
-          this.nbSameLetter = document.querySelectorAll('[data-letter='+this.tempLetter+']')//Va chercher les lettres de l'alphabet qui ont en attribut la lettre sur laquel on a cliqué
-          if(game.isIn!=-1){ //si isIn est vrai alors
-            for(let i=0; i<this.nbSameLetter.length; i++)//vérifie si la même lettre est présente plusieurs fois dans le même mot
-            {
-              this.nbSameLetter[i].classList.add('display')// si la lettre est présente, elle apparaît
+          promptWord.tempLetter = promptWord.alphabet[i].innerHTML
+          promptWord.isIn=promptWord.secretWord.lastIndexOf(promptWord.tempLetter)//if clicked letter(lastIndexOf) is in (secretWord)
+          promptWord.nbSameLetter = document.querySelectorAll('[data-letter='+promptWord.tempLetter+']')//get alphabet's letters wich attribute is clicked letter
+          if(promptWord.isIn!=-1){ //if isIn is true
+            for(let i=0; i<promptWord.nbSameLetter.length; i++){// check if the same letter is severous time in the same word
+              promptWord.nbSameLetter[i].classList.add('display')// if it is, display letter
             }
-            if(this.nbSameLetter.length==this.secretWord){// si le nombre de lettres affichées est égal aux nombres de lettres dans le mot
-              this.backgroundImage.style.background="url(../images/winner.png)"
-              game.score++// affiche l'image victoire
+            if(promptWord.nbSameLetter.length==promptWord.secretWord){// if number of display letters is aqual to number of letter in secret word
+              promptWord.backgroundImage.style.background="url(../images/winner.png)"// display victory image
             }
           }
           else{
-            this.looseLetter++ //le compteur looseLetter prend la valeur + 1
-            console.log(this.looseLetter);
-            this.backgroundImage=document.querySelector('gameSpace')// selon le nombre d'erreurs, affiche le niveau de destruction du bateau en background-image
-            if(this.looseLetter==1){
-              this.backgroundImage.style.background="url(../images/fondAccueil2.jpg)"
+            promptWord.looseLetter++ //looseLetter increase
+            console.log(promptWord.looseLetter);
+            promptWord.backgroundImage=document.querySelector('gameSpace')// given the error number, given level of boat's destruction in background-image
+            if(promptWord.looseLetter==1){
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil2.jpg)"
             }
-            else if(this.looseLetter==2){
-              this.backgroundImage.style.background="url(../images/fondAccueil3.jpg)"
+            else if(promptWord.looseLetter==2){
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil3.jpg)"
             }
-            else if(this.looseLetter==3){
-              this.backgroundImage.style.background="url(../images/fondAccueil4.jpg)"
+            else if(promptWord.looseLetter==3){
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil4.jpg)"
             }
-            else if(this.looseLetter==4){
-              this.backgroundImage.style.background="url(../images/fondAccueil5.jpg)"
+            else if(promptWord.looseLetter==4){
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil5.jpg)"
             }
-            else if(this.looseLetter==5){
-              this.backgroundImage.style.background="url(../images/fondAccueil6.jpg5)"
+            else if(promptWord.looseLetter==5){
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil6.jpg5)"
             }
-            else if(this.looseLetter==6){
-              this.backgroundImage.style.background="url(../images/fondAccueil7.jpg)"
+            else if(promptWord.looseLetter==6){
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil7.jpg)"
             }
-            else if(this.looseLetter==7){
-              this.backgroundImage.style.background="url(../images/fondAccueil8.jpg)"
+            else if(promptWord.looseLetter==7){
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil8.jpg)"
             }
-            else if(this.looseLetter==8){
-              this.backgroundImage.style.background="url(../images/fondAccueil9.jpg)"
+            else if(promptWord.looseLetter==8){
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil9.jpg)"
             }
             else{
-              this.backgroundImage.style.background="url(../images/fondAccueil10.jpg)"
+              promptWord.backgroundImage.style.background="url(../images/fondAccueil10.jpg)"
             }
           }
-      })
+        }
+      )
     }
   }
 }

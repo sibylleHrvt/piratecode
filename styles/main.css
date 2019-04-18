@@ -243,11 +243,11 @@ footer{
   justify-content: space-around;
   background-image: url("../images/pancartes-bois.jpg");
   border-radius: 10px;
-  margin: 10px 0px 0px 0px;
+  margin: 0 auto;
 }
 
 .level{
-  width: 200px;
+  width: 320px;
   margin: 0 auto;
   border: 2px solid #000;
 }
@@ -257,6 +257,7 @@ footer{
   width: 10%;
   margin: 40px auto;
   transition: width 0.5s;
+  padding: 0px 100px;
 }
 
 .levelImage:hover{
@@ -268,9 +269,10 @@ footer{
   width: 60px;
   font-size: 12px;
   background: black;
-  text-align: center;
-  margin: 10px 0px 0px 8px;
+  margin-left: 110px;
+  margin-top: 10px;
   padding: 5px;
+  text-align:center;
   transition: width 0.5s, font-size 0.5s;
 
 }
