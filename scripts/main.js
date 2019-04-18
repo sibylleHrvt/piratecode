@@ -1,5 +1,9 @@
 let pos, secretWord, txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn, nbSameLetter, backgroundImage, winCheck, words, tempLevel
 
+let game ={
+  score: 0,
+  replayButton: document.querySelector('button'),
+  }
 
 let promptWord = { //define secretword
   level1: document.querySelector('.level1'),
@@ -123,6 +127,7 @@ let promptWord = { //define secretword
   }
 }
 
+game.replay()
 
 promptWord.chooseLevel()
 promptWord.randomSecretWord()
@@ -133,7 +138,7 @@ promptWord.runAlphabet()
 // À faire Jeudi :
 // - fonction WIN (toutes les cases des mots sont en display) OK (normalement)
 // - afficher image si victoire --> OK (normalement)
-// - créer une fonction pour rafraichir la page
+// - créer une fonction pour rafraichir la page : CEST FAIT
 // - héberger le lien du site (important)
 // - rajouter de la musique en fond du jeu (https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript/1921854-laudio-et-la-video)
 // - si on a le temps, essayer de rajouter des indices pendant la progression du jeu et/ou des animations (sur logo, yeux des personnages, etc.) mais seulement si on a le temps
