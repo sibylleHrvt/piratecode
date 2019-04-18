@@ -2,9 +2,9 @@ let pos, secretWord, txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn
 
 
 let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
-  level1: document.querySelector('#level1'),
-  level2: document.querySelector('#level2'),
-  level3: document.querySelector('#level3'),
+  level1: document.querySelector('.level1'),
+  level2: document.querySelector('.level2'),
+  level3: document.querySelector('.level3'),
   tempLevel: 0, //variable qui enregistre le choix du tableau
   words:[
     ['PIRATE', 'BATEAU', 'CANON', 'CALE', 'CAPE', 'MARIN', 'PERROQUET', 'PONT', 'POUPE', 'NAVIRE', 'CAPITAINE', 'TRÉSOR', 'RAME', 'BOTTES', 'CRANE', 'RAT', 'ILE','PORT','SABRE', 'JACK', 'PLUME'],
@@ -24,20 +24,19 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   isIn: isIn, //variable qui enregistre si a lettre sur laquelle on a cliqué est dans le mot secret
   nbSameLetter: nbSameLetter,// nb de lettres identiques ds un même mot
   backgroundImage: backgroundImage, //image de fond qui change selon les erreures
-  chooseLevel: function(){
-    //choisir la difficulté
+  chooseLevel: function(){ //choisir la difficulté
     this.level1.addEventListener( // Selon le choix du niveau, permettra d'attribuer un des tableaux de words (selon la position)
-      "click",
+      'click',
       function(){
         this.tempLevel=0
       })
     this.level2.addEventListener(
-      "click",
+      'click',
       function(){
         this.tempLevel=1
       })
     this.level3.addEventListener(
-      "click",
+      'click',
       function(){
         this.tempLevel=2
       })
@@ -65,8 +64,9 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
     for (let i=0; i < this.alphabet.length; i++){ //on parcourt alphabet
       console.log(this.alphabet[i].innerHTML)
       this.alphaPos = this.alphabet[i]
+      console.log(this.alphaPos)
       this.alphaPos.addEventListener( //pour chacune des lettres de l'alphabet (alphaPos)
-        "click", // di on clique sur la case
+        "click", // si on clique sur la case
         function(){
           this.tempLetter = this.alphabet[i].innerHTML
           this.isIn=this.secretWord.lastIndexOf(this.tempLetter)//si la lettre sur laquelle on a cliqué (lastIndexOf) est dans le mot (secretWord)
