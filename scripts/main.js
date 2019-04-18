@@ -85,11 +85,14 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
         function(){
           this.tempLetter = this.alphabet[i].innerHTML
           this.isIn=this.secretWord.lastIndexOf(this.tempLetter)//si la lettre sur laquelle on a cliqué (lastIndexOf) est dans le mot (secretWord)
-          this.nbSameLetter = document.querySelectorAll('[data-letter='+this.tempLetter+']')
+          this.nbSameLetter = document.querySelectorAll('[data-letter='+this.tempLetter+']')//Va chercher les lettres de l'alphabet qui ont en attribut la lettre sur laquel on a cliqué
           if(game.isIn!=-1){ //si isIn est vrai alors
             for(let i=0; i<this.nbSameLetter.length; i++)//vérifie si la même lettre est présente plusieurs fois dans le même mot
             {
               this.nbSameLetter[i].classList.add('display')// si la lettre est présente, elle apparaît
+            }
+            if(){
+              this.backgroundImage.style.background="url(../images/winner.png)"
             }
           }
           else{
