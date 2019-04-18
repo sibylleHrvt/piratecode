@@ -51,7 +51,7 @@ let promptWord = { //define secretword
   },
   randomSecretWord: function(){ //give a random secret word from one of the three arrays
     promptWord.pos=Math.floor(Math.random()*promptWord.words[promptWord.tempLevel].length)
-    console.log(this.pos) //random choice in words
+    console.log(promptWord.pos) //random choice in words
     promptWord.secretWord=promptWord.words[promptWord.tempLevel][promptWord.pos]
     console.log(promptWord.secretWord)//secret word define with level(tempLevel) and random number(pos)
     // ERREUR À CORRIGER !!!
