@@ -72,12 +72,15 @@ li{
   width: 250px;
   padding: 10px 60px;
   border-radius: 40px;
+  transition: width 1s, height 1s, font-size 1s;
 }
 
 .play:hover{
   width: 175px;
   height: 40px;
   font-size: 35px;
+  transition-property: width;
+  transition-duration: 2s;
 }
 
 #rules, #story{
@@ -120,6 +123,12 @@ img.pirateLogo{
   margin-top: 50px;
   margin-left: 280px;
   display: left;
+  transition: width 1s;
+}
+
+
+img.pirateLogo:hover{
+  width: 410px;
 }
 
 .game{
