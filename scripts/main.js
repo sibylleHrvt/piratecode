@@ -5,7 +5,7 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   level1: document.querySelector('#level1'),
   level2: document.querySelector('#level2'),
   level3: document.querySelector('#level3'),
-  tempLevel: tempLevel, //variable qui enregistre le choix du tableau
+  tempLevel: 0, //variable qui enregistre le choix du tableau
   words:[
     ['PIRATE', 'BATEAU', 'CANON', 'CALE', 'CAPE', 'MARIN', 'PERROQUET', 'PONT', 'POUPE', 'NAVIRE', 'CAPITAINE', 'TRÉSOR', 'RAME', 'BOTTES', 'CRANE', 'RAT', 'ILE','PORT','SABRE', 'JACK', 'PLUME'],
     ['GOUVERNAIL', 'ESCALE', 'PAVILLON', 'CORSAIRE', 'TRIBORD','AMARRER', 'NOEUD', 'VAISSEAU', 'CANONNER', 'BOUCANIER', 'CONTREBANDE', 'TRICORNE', 'RHUM', 'TONNEAU', 'TEMPETE', 'MONSTRE', 'VOLEUR', 'PIEUVRE'],
@@ -43,8 +43,8 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
       })
   },
   randomSecretWord: function(){ //génére un mot aleatoire selon les 3 niveaux de difficulté
-    this.pos=Math.floor(Math.random()*this.words.length) //choix aléatoire dans words selon la position des elmts
-    this.secretWord.innerHTML=this.words[this.pos][this.tempsLevel]//le secret word est defini selon le niveau et un nombre aleatoire
+    this.pos=Math.floor(Math.random()*this.words[this.tempLevel].length) //choix aléatoire dans words selon la position des elmts
+    this.secretWord=this.words[this.tempLevel][this.pos]//le secret word est defini selon le niveau et un nombre aleatoire
     // ERREUR À CORRIGER !!!
   },
   createBox: function(divLetter){// créé les emplacements par lettre

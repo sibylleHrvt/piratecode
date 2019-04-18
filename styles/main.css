@@ -255,7 +255,7 @@ footer{
   position: absolute;
   width: 10%;
   margin: 40px 0px;
-  transition: width 1s;
+  transition: width 0.5s;
 }
 
 .levelImage:hover{
@@ -270,7 +270,7 @@ footer{
   text-align: center;
   margin: 10px 0px 0px 8px;
   padding: 5px;
-  transition: width 1s, font-size 1s;
+  transition: width 0.5s, font-size 0.5s;
 
 }
 
@@ -286,4 +286,18 @@ img.bateauNav{
   width: 250px;
   height:250px;
   padding-top: 375px;
+}
+
+.audio{
+  margin-left: 100px;
+}
+
+.control{
+  color: #fff;
+  width: 70px;
+  background: #000;
+  margin: 10px auto;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 10px;
 }
