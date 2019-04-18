@@ -125,7 +125,7 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
             }
             else{
               this.backgroundImage.style.background="url(../images/fondAccueil10.jpg)"
-            } 
+            }
           }
       })
     }
@@ -141,7 +141,7 @@ promptWord.runAlphabet()
 // À faire Jeudi :
 // - fonction WIN (toutes les cases des mots sont en display)
 // - afficher image si victoire
-// - créer une fonction pour rafraichir la page
-// - héberger le lien du site (important)
+// - créer une fonction pour rafraichir la page : C'est FAIT
+// - héberger le lien du site (important) 
 // - rajouter de la musique en fond du jeu (https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript/1921854-laudio-et-la-video)
 // - si on a le temps, essayer de rajouter des indices pendant la progression du jeu et/ou des animations (sur logo, yeux des personnages, etc.) mais seulement si on a le temps
