@@ -118,7 +118,7 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
             }
             else{
               this.backgroundImage.style.background="url(../images/fondAccueil10.jpg)"
-            }
+            } 
           }
       })
     }
