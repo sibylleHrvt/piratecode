@@ -9,7 +9,7 @@ let promptWord = { //define secretword
   level1: document.querySelector('.level1'),
   level2: document.querySelector('.level2'),
   level3: document.querySelector('.level3'),
-  tempLevel: tempLevel, //save choice of array
+  tempLevel: 0, //save choice of array
   choosenLevel:[],
   words:[
     ['PIRATE', 'BATEAU', 'CANON', 'CALE', 'CAPE', 'MARIN', 'PERROQUET', 'PONT', 'POUPE', 'NAVIRE', 'CAPITAINE', 'TRÉSOR', 'RAME', 'BOTTES', 'CRANE', 'RAT', 'ILE','PORT','SABRE', 'JACK', 'PLUME'],
@@ -50,11 +50,10 @@ let promptWord = { //define secretword
       })
   },
   randomSecretWord: function(){ //give a random secret word from one of the three arrays
-    promptWord.pos=Math.floor(Math.random()*promptWord.words[promptWord.tempLevel].length)
-    console.log(promptWord.pos) //random choice in words
-    promptWord.secretWord=promptWord.words[promptWord.tempLevel][promptWord.pos]
-    console.log(promptWord.secretWord)//secret word define with level(tempLevel) and random number(pos)
-    // ERREUR À CORRIGER !!!
+    this.pos=Math.floor(Math.random()*this.words[this.tempLevel].length)
+    console.log(this.pos) //random choice in words
+    this.secretWord=promptWord.words[this.tempLevel][this.pos]
+    console.log(this.secretWord)//secret word define with level(tempLevel) and random number(pos)
   },
   createBox: function(divLetter){// create a box for each letter
     this.wordSpace=document.querySelector('.wordSpace')
@@ -71,8 +70,10 @@ let promptWord = { //define secretword
     }
   },
   runAlphabet: function(){//run the alphabet to check if ckicked letter is in secret word
+    this.alphabet= document.querySelectorAll('.alphaLetter')
+    console.log(this.alphabet)
     for (let i=0; i < this.alphabet.length; i++){ //run alphabet
-      console.log(this.alphabet[i].innerHTML)
+      console.log(this.alphabet[i])
       this.alphaPos = this.alphabet[i]
       console.log(this.alphaPos)
       this.alphaPos.addEventListener( //for each letter of alphabet (alphaPos)
@@ -94,28 +95,28 @@ let promptWord = { //define secretword
             console.log(promptWord.looseLetter);
             promptWord.backgroundImage=document.querySelector('gameSpace')// given the error number, given level of boat's destruction in background-image
             if(promptWord.looseLetter==1){
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil2.jpg)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil2.jpg)"
             }
             else if(promptWord.looseLetter==2){
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil3.jpg)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil3.jpg)"
             }
             else if(promptWord.looseLetter==3){
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil4.jpg)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil4.jpg)"
             }
             else if(promptWord.looseLetter==4){
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil5.jpg)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil5.jpg)"
             }
             else if(promptWord.looseLetter==5){
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil6.jpg5)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil6.jpg5)"
             }
             else if(promptWord.looseLetter==6){
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil7.jpg)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil7.jpg)"
             }
             else if(promptWord.looseLetter==7){
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil8.jpg)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil8.jpg)"
             }
             else if(promptWord.looseLetter==8){
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil9.jpg)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil9.jpg)"
             }
             else{
               promptWord.backgroundImage.style.background="url(../images/fondAccueil10.jpg)"
@@ -131,6 +132,13 @@ promptWord.chooseLevel()
 promptWord.randomSecretWord()
 promptWord.createBox()
 promptWord.runAlphabet()
+
+// let sauce = setInterval(
+//   ()=>{
+//     promptWord.randomSecretWord();
+//   },
+//   3000
+// );
 
 
 // À faire Jeudi :

@@ -161,20 +161,20 @@ li.alpahaLetter:hover{
   height: 550px;
   background-image: url("../images/ile4.jpg");
   background-size: 104%;
-  margin: 10px auto 10px auto;
+  margin: 10px auto 0px auto;
 }
 
 .wordSpace{
   display: flex;
   justify-content: space-between;
-  margin: 355px 10px 200px auto;
+  margin: 370px 0px 0px auto;
   width: 500px;
 
 }
 
 ul.divLetter{
   width: 400px;
-  display: flex;
+  margin: 0 auto;
 }
 
 li.txtLetter{
