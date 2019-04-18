@@ -9,22 +9,38 @@
     <link rel="icon" href="images/favicon.ico" />
   </head>
   <body>
-    <div class="menu">
-      <nav class="container">
-        <div class="logo">
-          <a href="index.html"><img src="images/logo.png" alt="logo" id="logo"></a>
+      <header>
+        <div class="menu">
+          <nav class="container">
+            <div class="logo">
+              <a href="index.html"><img src="images/logo.png" alt="logo" id="logo"></a>
+            </div>
+            <ul class="ulMenu">
+              <li>
+                <a href="index.html">Accueil</a>
+              </li>
+              <li>
+                <a href="page.html">Jouer</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <ul>
-          <li>
-            <a href="index.html">Accueil</a>
-          </li>
-          <li>
-            <a href="page.html">Jouer</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      </header>
     <main class="container">
+      <div class="levelBloc">
+        <div id='level1' class="level">
+          <h2 id="txtLevel1">NIVEAU 1</h2>
+          <img src="images/pirate1.png" alt="niveau1" class="levelImage">
+        </div>
+        <div id="level2" class="level">
+          <h2 id="txtLevel2">NIVEAU 2</h2>
+          <img src="images/pirate2.png" alt="niveau2" class="levelImage">
+        </div>
+        <div id="level3" class="level">
+          <h2 id="txtLevel3">NIVEAU 3</h2>
+          <img src="images/pirate3.png" alt="niveau3" class="levelImage">
+        </div>
+      </div>
       <div class="gameSpace">
         <div class="wordSpace">
         </div>
@@ -58,6 +74,9 @@
           <li class="alphaLetter">Y</li>
           <li class="alphaLetter">Z</li>
         </ul>
+      </div>
+      <div>
+        <button id="replay">REJOUER</button>
       </div>
       <div class="text">
         <div id="story">

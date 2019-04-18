@@ -13,10 +13,9 @@ main{
 }
 
 main.accueil{
-  background-image: url("../images/fond.png");
+  background-image: url("../images/fondAccueil.png");
   background-size: 115%;
-  position: relative;
-  height: 100vh;
+  height: 650px;
   z-index: -15000;
 }
 
@@ -38,7 +37,7 @@ nav{
   padding: 10px;
 }
 
-ul{
+ul.ulMenu{
   list-style:none;
   justify-content: space-around;
   margin:0;
@@ -60,19 +59,25 @@ li{
   background: black;
 }
 
-
 .playButton{
   color: #fff;
   font-size: 30px;
   padding: 0px 0px 100px 0px;
   margin: 0 auto;
-  z-index: 0;
 }
 
 .play{
   background: #000;
   text-align: center;
-  padding: 10px;
+  width: 250px;
+  padding: 10px 60px;
+  border-radius: 40px;
+}
+
+.play:hover{
+  width: 175px;
+  height: 40px;
+  font-size: 35px;
 }
 
 #rules, #story{
@@ -83,7 +88,8 @@ li{
 .text{
   display: flex;
   flex-wrap: wrap;
-  background-image: url("../images/pancartes-bois.jpg")
+  background-image: url("../images/pancartes-bois.jpg");
+  border-radius: 20px;
 }
 
 h2{
@@ -96,15 +102,25 @@ h2{
 p.story, p.rules{
   color: #FFF;
 }
+
 div.pirateLogo{
-  height : 100vh;
-}
-img.pirateLogo{
-  z-index: 10;
-  width: 400px;
-  padding: 10px 0px;
+  height : 100%;
+  position:relative;
 }
 
+.pirateLogoBloc{
+  width: 960px;
+  margin: 0 auto;
+}
+
+img.pirateLogo{
+  position: absolute;
+  z-index: 10;
+  width: 400px;
+  margin-top: 50px;
+  margin-left: 280px;
+  display: left;
+}
 
 .game{
   width: 960px;
@@ -135,35 +151,34 @@ li.alpahaLetter:hover{
   background-color: #6c472c;
 }
 
-
 .gameSpace{
   width: 960px;
   height: 550px;
-  background-image: url("../images/fondAccueil.jpg");
+  background-image: url("../images/ile4.jpg");
   background-size: 104%;
-  margin: 40px auto;
+  margin: 10px auto 40px auto;
 }
 
 .wordSpace{
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  width: 100px;
-  padding-top: 360px;
-  padding-left: 175px;
+  margin: 355px 10px 200px auto;
+  width: 500px;
+
 }
 
 ul.divLetter{
-  width: 31px;
+  width: 400px;
+  display: flex;
 }
 
 li.txtLetter{
   color: #c6b54f;
-  font-size: 30px;
+  font-size: 20px;
   flex-wrap: wrap;
   background-color: #c6b54f;
-  width: 40px;
-  height: 35px;
+  width: 20px;
+  height: 25px;
   border: 2px solid #9b9042;
   padding: 0px 5px;
 }
@@ -172,7 +187,6 @@ li.txtLetter.display{
   background-color: #9b9042;
 }
 
-
 .newGame{
   position:fixed;
   top:20px;
@@ -180,6 +194,7 @@ li.txtLetter.display{
   font-size:18px;
   color: #000;
 }
+
 footer{
   background-color: #000;
   height: 130px;
@@ -193,28 +208,57 @@ footer{
   width: 500px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 40px auto;
   justify-content: space-between;
 }
 
-img.bateauNav{
-  /* position: absolute; */
-  position: absolute;
-  left : 0px ;
-  z-index: -1;
-  width: 250px;
-  height:250px;
+#replay{
+  background-color: #000;
+  color: #fff;
+  border-radius: 40px;
+  padding: 10px;
+  margin: 20px;
+  font-size: 20px;
 }
 
-/* .bateau_mouv{
+.levelBLoc{
+  width: 960px;
+  display: flex;
+  justify-content: space-around;
+  background-image: url("../images/pancartes-bois.jpg");
+  border-radius: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+#level1, #level2, #level3{
+  width: 75px;
+  margin: 0 50px;
+}
+
+#levelImage1, #levelImage2, #levelImage3{
+  width: 110%;
+}
+
+#txtLevel1, #txtLevel2, #txtLevel3{
+  color: white;
+  width: 60px;
+  font-size: 12px;
+  background: black;
+  text-align: center;
+  margin: 10px 0px;
+  padding: 5px;
+}
+
+.levelImage{
+  width: 150%;
+  margin: 10px 0px;
+}
+
+img.bateauNav{
+  position: absolute;
+  left : 0px ;
+  z-index: 1;
   width: 250px;
   height:250px;
-  margin-top: -500px;
-  position: absolute;
-  z-index: -10;
-} */
-
-.yes{
-  width: 200px;
-  background-color: black;
+  padding-top: 220px;
 }
