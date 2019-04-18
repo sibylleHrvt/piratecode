@@ -127,8 +127,6 @@ let promptWord = { //define secretword
   }
 }
 
-game.replay()
-
 promptWord.chooseLevel()
 promptWord.randomSecretWord()
 promptWord.createBox()
