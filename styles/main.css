@@ -14,8 +14,9 @@ main{
 
 main.accueil{
   background-image: url("../images/fondAccueil.png");
-  background-size: 115%;
-  height: 650px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 800px;
   z-index: -15000;
 }
 
