@@ -28,7 +28,7 @@ let promptWord = { //define secretword
   tempLetter: tempLetter,
   isIn: isIn, //save if clicked letter is in sacretWord
   nbSameLetter: nbSameLetter,// nb of same letter in secretWord
-  backgroundImage: backgroundImage, //background-image which change if wrong letter
+  backgroundImage: document.querySelector('.gameSpace'), //background-image which change if wrong letter
   chooseLevel: function(){ //--> choose difficulty
     this.level1.addEventListener( // Given level's choice, give one of words array
       'click',
@@ -70,7 +70,7 @@ let promptWord = { //define secretword
     }
   },
   runAlphabet: function(){//run the alphabet to check if ckicked letter is in secret word
-    this.alphabet= document.querySelectorAll('.alphaLetter')
+    this.alphabet= document.querySelectorAll('.alphaLetter')//get the alphabet's letters in li and put the in alphabet: []
     console.log(this.alphabet)
     for (let i=0; i < this.alphabet.length; i++){ //run alphabet
       console.log(this.alphabet[i])
@@ -93,33 +93,46 @@ let promptWord = { //define secretword
           else{
             promptWord.looseLetter++ //looseLetter increase
             console.log(promptWord.looseLetter);
-            promptWord.backgroundImage=document.querySelector('gameSpace')// given the error number, given level of boat's destruction in background-image
-            if(promptWord.looseLetter==1){
+            if(promptWord.looseLetter==1){// given the error number, given level of boat's destruction in background-image
               promptWord.backgroundImage.style.background="url(images/fondAccueil2.jpg)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
             }
             else if(promptWord.looseLetter==2){
               promptWord.backgroundImage.style.background="url(images/fondAccueil3.jpg)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
             }
             else if(promptWord.looseLetter==3){
               promptWord.backgroundImage.style.background="url(images/fondAccueil4.jpg)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
             }
             else if(promptWord.looseLetter==4){
               promptWord.backgroundImage.style.background="url(images/fondAccueil5.jpg)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
+
             }
             else if(promptWord.looseLetter==5){
               promptWord.backgroundImage.style.background="url(images/fondAccueil6.jpg5)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
+
             }
             else if(promptWord.looseLetter==6){
               promptWord.backgroundImage.style.background="url(images/fondAccueil7.jpg)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
+
             }
             else if(promptWord.looseLetter==7){
               promptWord.backgroundImage.style.background="url(images/fondAccueil8.jpg)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
+
             }
             else if(promptWord.looseLetter==8){
               promptWord.backgroundImage.style.background="url(images/fondAccueil9.jpg)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
+
             }
             else{
-              promptWord.backgroundImage.style.background="url(../images/fondAccueil10.jpg)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil10.jpg)"
+              promptWord.backgroundImage.style.backgroundSize="100%"
             }
           }
         }
@@ -129,16 +142,17 @@ let promptWord = { //define secretword
 }
 
 promptWord.chooseLevel()
-promptWord.randomSecretWord()
+
+//start function on click
+let playGame=document.querySelector('.replay')
+
+playGame.addEventListener(
+  'click',
+  promptWord.randomSecretWord()
+  )
+
 promptWord.createBox()
 promptWord.runAlphabet()
-
-// let sauce = setInterval(
-//   ()=>{
-//     promptWord.randomSecretWord();
-//   },
-//   3000
-// );
 
 
 // À faire Jeudi :

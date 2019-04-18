@@ -159,15 +159,15 @@ li.alpahaLetter:hover{
 .gameSpace{
   width: 960px;
   height: 550px;
-  background-image: url("../images/ile4.jpg");
-  background-size: 104%;
+  background-image: url("../images/fondAccueil1.jpg");
+  background-size: 100%;
   margin: 10px auto 0px auto;
 }
 
 .wordSpace{
   display: flex;
   justify-content: space-between;
-  margin: 370px 0px 0px auto;
+  margin: 365px 150px 0px auto;
   width: 500px;
 
 }
@@ -303,4 +303,21 @@ img.bateauNav{
   padding: 5px;
   font-size: 20px;
   border-radius: 10px;
+}
+
+.instructionBloc{
+  width: 960px;
+  margin: 0 auto;
+}
+
+.instruction{
+  width: 960px;
+  display: flex;
+  font-size: 30px;
+  color: #000;
+  flex-wrap: wrap;
+  margin: 10px;
+  text-align: center;
+  padding: 0px 290px;
+  font-family: 'Sedgwick Ave Display', cursive;
 }
