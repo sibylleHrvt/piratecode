@@ -1,12 +1,5 @@
-let pos, secretWord='test', txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn, nbSameLetter, backgroundImage, winCheck, words, tempLevel
+let pos, secretWord, txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn, nbSameLetter, backgroundImage, winCheck, words, tempLevel
 
-let game ={
-  score: 0,
-  replayButton: document.querySelector('button'),
-  }
-)
-  }
-   }
 
 let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   level1: document.querySelector('#level1'),
@@ -33,7 +26,7 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   backgroundImage: backgroundImage, //image de fond qui change selon les erreures
   chooseLevel: function(){
     //choisir la difficulté
-    this.level1.addEventListener(
+    this.level1.addEventListener( // Selon le choix du niveau, permettra d'attribuer un des tableaux de words (selon la position)
       "click",
       function(){
         this.tempLevel=0
@@ -51,8 +44,8 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   },
   randomSecretWord: function(){ //génére un mot aleatoire selon les 3 niveaux de difficulté
     this.pos=Math.floor(Math.random()*this.words.length) //choix aléatoire dans words selon la position des elmts
-    this.secretWord=this.words[this.tempLevel][this.pos]//le secret word est defini selon le niveau et un nombre aleatoire
-    // ERREURE À CORRIGER !!!
+    this.secretWord.innerHTML=this.words[this.pos][this.tempsLevel]//le secret word est defini selon le niveau et un nombre aleatoire
+    // ERREUR À CORRIGER !!!
   },
   createBox: function(divLetter){// créé les emplacements par lettre
     this.wordSpace=document.querySelector('.wordSpace')
@@ -64,7 +57,7 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
       this.txtLetter=document.createElement('li') //on créé un li .txtLetter dans la ul .divLetter
       this.divLetter.appendChild(this.txtLetter)
       this.txtLetter.className= 'txtLetter'
-      this.txtLetter.setAttribute('data-letter',this.boxGame[i] )
+      this.txtLetter.setAttribute('data-letter',this.boxGame[i] )//on donne un attribut au li créé selon sa position dans BoxGame (dans le mot)
       this.txtLetter.innerHTML=this.boxGame[i]
     }
   },
@@ -125,7 +118,6 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   }
 }
 
-game.replay()
 
 promptWord.chooseLevel()
 promptWord.randomSecretWord()
