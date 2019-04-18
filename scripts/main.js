@@ -87,7 +87,7 @@ let promptWord = { //define secretword
               promptWord.nbSameLetter[i].classList.add('display')// if it is, display letter
             }
             if(promptWord.nbSameLetter.length==promptWord.secretWord){// if number of display letters is aqual to number of letter in secret word
-              promptWord.backgroundImage.style.background="url(../images/winner.png)"// display victory image
+              promptWord.backgroundImage.style.background="url(images/winner.png)"// display victory image
             }
           }
           else{
