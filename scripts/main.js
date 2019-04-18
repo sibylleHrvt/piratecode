@@ -111,7 +111,7 @@ let promptWord = { //define secretword
 
             }
             else if(promptWord.looseLetter==5){
-              promptWord.backgroundImage.style.background="url(images/fondAccueil6.jpg5)"
+              promptWord.backgroundImage.style.background="url(images/fondAccueil6.jpg)"
               promptWord.backgroundImage.style.backgroundSize="100%"
 
             }
