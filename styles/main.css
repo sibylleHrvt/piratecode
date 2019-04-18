@@ -161,7 +161,7 @@ li.alpahaLetter:hover{
   height: 550px;
   background-image: url("../images/ile4.jpg");
   background-size: 104%;
-  margin: 10px auto 40px auto;
+  margin: 10px auto 10px auto;
 }
 
 .wordSpace{
@@ -213,11 +213,14 @@ footer{
   width: 500px;
   display: flex;
   flex-wrap: wrap;
+  margin-top:400px;
   margin: 40px auto;
   justify-content: space-between;
 }
 
+
 .replay{
+  margin: 0 auto;
   background-color: #000;
   color: #fff;
   border-radius: 40px;
@@ -226,8 +229,16 @@ footer{
   font-size: 20px;
 }
 
+.replay:hover{
+  padding: 15px;
+  font-size: 21px;
+  margin:10;
+}
+
 .levelBLoc{
   width: 960px;
+  height: 300px;
+  position: relative;
   display: flex;
   justify-content: space-around;
   background-image: url("../images/pancartes-bois.jpg");
@@ -236,13 +247,20 @@ footer{
 }
 
 .level{
-  width: 150px;
+  width: 200px;
   margin: 0 auto;
+  border: 2px solid #000;
 }
 
 .levelImage{
-  width: 75%;
-  margin: 20px 0px;
+  position: absolute;
+  width: 10%;
+  margin: 40px auto;
+  transition: width 0.5s;
+}
+
+.levelImage:hover{
+  width: 11%;
 }
 
 .txtLevel{
@@ -253,7 +271,13 @@ footer{
   text-align: center;
   margin: 10px 0px 0px 8px;
   padding: 5px;
+  transition: width 0.5s, font-size 0.5s;
 
+}
+
+.txtLevel:hover{
+  width: 65px;
+  font-size: 14px;
 }
 
 img.bateauNav{
@@ -263,4 +287,18 @@ img.bateauNav{
   width: 250px;
   height:250px;
   padding-top: 375px;
+}
+
+.audio{
+  margin-left: 100px;
+}
+
+.control{
+  color: #fff;
+  width: 70px;
+  background: #000;
+  margin: 10px auto;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 10px;
 }
