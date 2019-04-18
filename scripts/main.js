@@ -2,15 +2,7 @@ let pos, secretWord='test', txtLetter, divLetter, wordSpace, alphaPos, tempLette
 
 let game ={
   score: 0,
-  replayButton: document.getElementById('replay'),
-  levels: document.querySelectorAll(".level"),
-  end: false,
-  replay: function(){
-    replayButton.addEventListener(
-  'click',
-  function (e){
-    e.preventDefault() //ÇA MARCHE PAS !!!
-    init()
+  replayButton: document.querySelector('button'),
   }
 )
   }
@@ -91,8 +83,9 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
             {
               this.nbSameLetter[i].classList.add('display')// si la lettre est présente, elle apparaît
             }
-            if(){
+            if(this.nbSameLetter.length==this.secretWord){// si le nombre de lettres affichées est égal aux nombres de lettres dans le mot
               this.backgroundImage.style.background="url(../images/winner.png)"
+              game.score++// affiche l'image victoire
             }
           }
           else{
@@ -132,6 +125,8 @@ let promptWord = { //Definir le mot secret à efficher (nombre de cases, etc.)
   }
 }
 
+game.replay()
+
 promptWord.chooseLevel()
 promptWord.randomSecretWord()
 promptWord.createBox()
@@ -139,9 +134,9 @@ promptWord.runAlphabet()
 
 
 // À faire Jeudi :
-// - fonction WIN (toutes les cases des mots sont en display)
-// - afficher image si victoire
-// - créer une fonction pour rafraichir la page : C'est FAIT
-// - héberger le lien du site (important) 
+// - fonction WIN (toutes les cases des mots sont en display) OK (normalement)
+// - afficher image si victoire --> OK (normalement)
+// - créer une fonction pour rafraichir la page
+// - héberger le lien du site (important)
 // - rajouter de la musique en fond du jeu (https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript/1921854-laudio-et-la-video)
 // - si on a le temps, essayer de rajouter des indices pendant la progression du jeu et/ou des animations (sur logo, yeux des personnages, etc.) mais seulement si on a le temps
