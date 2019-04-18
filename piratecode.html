@@ -5,7 +5,6 @@
     <title> GAME JUNIOR - PIRATECODE</title>
     <meta name="description" content="Descritpion de ma page">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" href="images/favicon.ico" />
   </head>
@@ -34,9 +33,6 @@
         </div>
       </header>
     <main class="container">
-      <div class="instructionBloc">
-        <h2 class="instruction">CHOISISSEZ VOTRE PIRATE !</h2>
-      </div>
       <div class="levelBloc">
         <div class="level level1">
           <h2 class="txtLevel">NIVEAU 1</h2>
@@ -51,8 +47,9 @@
           <img src="images/pirate3.png" alt="niveau3" class="levelImage image3">
         </div>
       </div>
-      <div class="replayBloc">
-        <button class="replay">JOUER</button>
+      <div class="gameSpace">
+        <div class="wordSpace">
+        </div>
       </div>
       <div class="alphabetBloc">
         <ul class="alphabet">
@@ -84,9 +81,8 @@
           <li class="alphaLetter">Z</li>
         </ul>
       </div>
-      <div class="gameSpace">
-        <div class="wordSpace">
-        </div>
+      <div class="replayBloc">
+        <button class="replay" value="Refresh Page" onClick="window.location.reload()">REJOUER</button>
       </div>
       <div class="text">
         <div id="story">
