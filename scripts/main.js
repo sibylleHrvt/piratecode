@@ -30,19 +30,19 @@ let promptWord = { //define secretword
   nbSameLetter: nbSameLetter,// nb of same letter in secretWord
   backgroundImage: backgroundImage, //background-image which change if wrong letter
   chooseLevel: function(){ //--> choose difficulty
-    promptWord.level1.addEventListener( // Given level's choice, give one of words array
+    this.level1.addEventListener( // Given level's choice, give one of words array
       'click',
       function(){
         promptWord.tempLevel=0
         console.log(promptWord.tempLevel)
       })
-    promptWord.level2.addEventListener(
+    this.level2.addEventListener(
       'click',
       function(){
         promptWord.tempLevel=1
         console.log(promptWord.tempLevel)
       })
-    promptWord.level3.addEventListener(
+    this.level3.addEventListener(
       'click',
       function(){
         promptWord.tempLevel=2
