@@ -218,9 +218,14 @@ footer{
   justify-content: space-between;
 }
 
+.coolButton{
+  margin: 0 auto;
+  width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .replay{
-  margin: 0 auto;
   background-color: #000;
   color: #fff;
   border-radius: 40px;
@@ -320,4 +325,26 @@ img.bateauNav{
   text-align: center;
   padding: 0px 290px;
   font-family: 'Sedgwick Ave Display', cursive;
+}
+
+.hint{
+  width: 215px;
+  position: relative;
+  margin: 10px;
+  display: none;
+}
+
+.hintText{
+  position: absolute;
+  color: #fff;
+  background: #000;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.chooseLevel{
+  color: #000;
+  margin: 20px;
+  font-size: 19px;
 }

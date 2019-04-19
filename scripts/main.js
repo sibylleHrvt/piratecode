@@ -29,6 +29,7 @@ let promptWord = { //define secretword
   isIn: isIn, //save if clicked letter is in sacretWord
   nbSameLetter: nbSameLetter,// nb of same letter in secretWord
   backgroundImage: document.querySelector('.gameSpace'), //background-image which change if wrong letter
+  hint: document.querySelector('.hint'),
   chooseLevel: function(){ //--> choose difficulty
     this.level1.addEventListener( // Given level's choice, give one of words array
       'click',
@@ -74,7 +75,7 @@ let promptWord = { //define secretword
     console.log(this.alphabet)
     for (let i=0; i < this.alphabet.length; i++){ //run alphabet
       console.log(this.alphabet[i])
-      this.alphaPos = this.alp habet[i]
+      this.alphaPos = this.alphabet[i]
       console.log(this.alphaPos)
       this.alphaPos.addEventListener( //for each letter of alphabet (alphaPos)
         "click", // if click on the case
@@ -86,7 +87,7 @@ let promptWord = { //define secretword
             for(let i=0; i<promptWord.nbSameLetter.length; i++){// check if the same letter is severous time in the same word
               promptWord.nbSameLetter[i].classList.add('display')// if it is, display letter
             }
-            if(promptWord.nbSameLetter.length==promptWord.secretWord){// if number of display letters is aqual to number of letter in secret word
+            if(promptWord.nbSameLetter.length==promptWord.secretWord.length-1){// if number of display letters is aqual to number of letter in secret word
               promptWord.backgroundImage.style.background="url(images/winner.png)"// display victory image
             }
           }
@@ -104,6 +105,7 @@ let promptWord = { //define secretword
             else if(promptWord.looseLetter==3){
               promptWord.backgroundImage.style.background="url(images/fondAccueil4.jpg)"
               promptWord.backgroundImage.style.backgroundSize="100%"
+              promptWord.hint.style.display="block"
             }
             else if(promptWord.looseLetter==4){
               promptWord.backgroundImage.style.background="url(images/fondAccueil5.jpg)"
