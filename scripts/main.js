@@ -88,9 +88,8 @@ let promptWord = { //define secretword
           if(promptWord.isIn!=-1){ //if isIn is true
             for(let i=0; i<promptWord.nbSameLetter.length; i++){// check if the same letter is severous time in the same word
               promptWord.nbSameLetter[i].classList.add('display')// if it is, display letter
-              promptWord.winningLetter++
             }
-            if(promptWord.winningLetter+1==promptWord.secretWord.length+1){
+            if(promptWord.nbSameLetter+1==promptWord.secretWord.length+1){
               console.log(promptWord.secretWord.length)// if number of display letters is aqual to number of letter in secret word
               console.log(promptWord.winningLetter)
               console.log(promptWord.winnigLetter=promptWord.secretWord.length)
