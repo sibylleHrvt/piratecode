@@ -97,6 +97,7 @@ let promptWord = { //define secretword
               promptWord.backgroundImage.style.background="url(images/winner.png)"// display victory image
               promptWord.backgroundImage.style.backgroundSize="100%"
               promptWord.divLetter.style.display="none"
+              promptWord.hint.style.display="none"
             }
           }
           else{
