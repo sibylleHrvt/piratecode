@@ -74,7 +74,7 @@ let promptWord = { //define secretword
     console.log(this.alphabet)
     for (let i=0; i < this.alphabet.length; i++){ //run alphabet
       console.log(this.alphabet[i])
-      this.alphaPos = this.alphabet[i]
+      this.alphaPos = this.alp habet[i]
       console.log(this.alphaPos)
       this.alphaPos.addEventListener( //for each letter of alphabet (alphaPos)
         "click", // if click on the case
