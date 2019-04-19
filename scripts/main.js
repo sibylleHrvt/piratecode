@@ -162,7 +162,6 @@ playGame.addEventListener(
 
 promptWord.createBox()
 promptWord.runAlphabet()
-promptWord.winGame()
 
 
 // À faire Jeudi :
