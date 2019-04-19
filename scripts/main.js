@@ -162,12 +162,3 @@ playGame.addEventListener(
 
 promptWord.createBox()
 promptWord.runAlphabet()
-
-
-// À faire Jeudi :
-// - fonction WIN (toutes les cases des mots sont en display) OK (normalement)
-// - afficher image si victoire --> OK (normalement)
-// - créer une fonction pour rafraichir la page
-// - héberger le lien du site (important) -- FAIT
-// - rajouter de la musique en fond du jeu (https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript/1921854-laudio-et-la-video) - FAIT
-// - si on a le temps, essayer de rajouter des indices pendant la progression du jeu et/ou des animations (sur logo, yeux des personnages, etc.) mais seulement si on a le temps
