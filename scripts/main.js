@@ -88,15 +88,16 @@ let promptWord = { //define secretword
           if(promptWord.isIn!=-1){ //if isIn is true
             for(let i=0; i<promptWord.nbSameLetter.length; i++){// check if the same letter is severous time in the same word
               promptWord.nbSameLetter[i].classList.add('display')// if it is, display letter
+              promptWord.winningLetter++
             }
-            if(promptWord.nbSameLetter+1==promptWord.secretWord.length+1){
-              console.log(promptWord.secretWord.length)// if number of display letters is aqual to number of letter in secret word
-              console.log(promptWord.winningLetter)
-              console.log(promptWord.winnigLetter=promptWord.secretWord.length)
+            if(promptWord.winningLetter+1==promptWord.secretWord.length+1){
+              console.log(promptWord.nbSameLetter+1)// if number of display letters is aqual to number of letter in secret word
+              console.log(promptWord.secretWord.length+1)
+              console.log(promptWord.nbSameLetter+1==promptWord.secretWord.length+1)
               promptWord.backgroundImage.style.background="url(images/winner.png)"// display victory image
               promptWord.backgroundImage.style.backgroundSize="100%"
               promptWord.divLetter.style.display="none"
-         }
+            }
           }
           else{
             promptWord.looseLetter++ //looseLetter increase
@@ -162,3 +163,12 @@ playGame.addEventListener(
 
 promptWord.createBox()
 promptWord.runAlphabet()
+
+
+// À faire Jeudi :
+// - fonction WIN (toutes les cases des mots sont en display) OK (normalement)
+// - afficher image si victoire --> OK (normalement)
+// - créer une fonction pour rafraichir la page
+// - héberger le lien du site (important) -- FAIT
+// - rajouter de la musique en fond du jeu (https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript/1921854-laudio-et-la-video) - FAIT
+// - si on a le temps, essayer de rajouter des indices pendant la progression du jeu et/ou des animations (sur logo, yeux des personnages, etc.) mais seulement si on a le temps
