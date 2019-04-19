@@ -1,4 +1,4 @@
-let pos, secretWord, txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn, nbSameLetter, backgroundImage, winCheck, words, tempLevel
+let pos, secretWord, txtLetter, divLetter, wordSpace, alphaPos, tempLetter, isIn, nbSameLetter, backgroundImage, winCheck, words, tempLevel, winningLetter
 
 let game ={
   score: 0,
@@ -30,6 +30,8 @@ let promptWord = { //define secretword
   nbSameLetter: nbSameLetter,// nb of same letter in secretWord
   backgroundImage: document.querySelector('.gameSpace'), //background-image which change if wrong letter
   hint: document.querySelector('.hint'),
+  winningLetter: 0,
+  goodLetter: document.querySelectorAll('.display'),
   chooseLevel: function(){ //--> choose difficulty
     this.level1.addEventListener( // Given level's choice, give one of words array
       'click',
@@ -86,10 +88,16 @@ let promptWord = { //define secretword
           if(promptWord.isIn!=-1){ //if isIn is true
             for(let i=0; i<promptWord.nbSameLetter.length; i++){// check if the same letter is severous time in the same word
               promptWord.nbSameLetter[i].classList.add('display')// if it is, display letter
+              promptWord.winningLetter++
             }
-            if(promptWord.nbSameLetter.length==promptWord.secretWord.length-1){// if number of display letters is aqual to number of letter in secret word
+            if(promptWord.winningLetter+1==promptWord.secretWord.length+1){
+              console.log(promptWord.secretWord.length)// if number of display letters is aqual to number of letter in secret word
+              console.log(promptWord.winningLetter)
+              console.log(promptWord.winnigLetter=promptWord.secretWord.length)
               promptWord.backgroundImage.style.background="url(images/winner.png)"// display victory image
-            }
+              promptWord.backgroundImage.style.backgroundSize="100%"
+              promptWord.divLetter.style.display="none"
+         }
           }
           else{
             promptWord.looseLetter++ //looseLetter increase
@@ -140,6 +148,9 @@ let promptWord = { //define secretword
         }
       )
     }
+  },
+  winGame: function(){
+
   }
 }
 
@@ -155,6 +166,7 @@ playGame.addEventListener(
 
 promptWord.createBox()
 promptWord.runAlphabet()
+promptWord.winGame()
 
 
 // À faire Jeudi :
