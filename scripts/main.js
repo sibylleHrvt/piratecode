@@ -148,9 +148,6 @@ let promptWord = { //define secretword
       )
     }
   },
-  winGame: function(){
-
-  }
 }
 
 promptWord.chooseLevel()
